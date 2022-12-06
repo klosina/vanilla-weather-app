@@ -16,29 +16,38 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-app">
-        <h1>Vail, CO</h1>
-        <ul>
-          <li>Tuesday 05:50</li>
-          <li>Clear</li>
-        </ul>
-        <div class="row">
-          <div class="col-6">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-              alt="clear"
-            />
-            12 °C|°F
-          </div>
-          <div class="col-6">
+      <div class="app-wrap">
+        <div class="weather-app">
+          <div class="weather-info">
+            <h1>Vail, CO</h1>
             <ul>
-              <li>Precipitation: 0%</li>
-              <li>Humidity: 75%</li>
-              <li>Wind: 2km/h</li>
+              <li>Tuesday 05:50</li>
+              <li>Clear</li>
             </ul>
+            <div class="row row-wrapper">
+              <div class="col-6">
+                <div class="d-flex weather-temp">
+                  <img
+                    src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
+                    alt="clear"
+                    id="icon"
+                  />
+                  <div class="d-flex weather-temp">
+                    <strong>12</strong>
+                    <small class="units">°C |<a href="#"> °F</a></small>
+                  </div>
+                </div>
+              </div>
+              <div class="col-6">
+                <ul>
+                  <li>Precipitation: 0%</li>
+                  <li>Humidity: 75%</li>
+                  <li>Wind: 2km/h</li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
-
         <small>
           <a
             href="https://github.com/klosina/vanilla-weather-app"
