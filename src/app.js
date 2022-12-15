@@ -22,7 +22,6 @@ function formatDate(timestamp) {
 }
 
 function displayTemp(response) {
-  console.log(response.data);
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
   let descriptionElement = document.querySelector("#description");
@@ -39,7 +38,7 @@ function displayTemp(response) {
 }
 
 let apiKey = "578a34f187t077d178e8o87b0e0a9493";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=Vail&key=${apiKey}&units=metric`;
+let city = "Vail";
+let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-console.log(apiUrl);
 axios.get(apiUrl).then(displayTemp);
