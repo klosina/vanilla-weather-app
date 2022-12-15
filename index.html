@@ -11,6 +11,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/axios@1.1.2/dist/axios.min.js"></script>
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather App</title>
   </head>
@@ -19,10 +20,10 @@
       <div class="app-wrap">
         <div class="weather-app">
           <div class="weather-info">
-            <h1>Vail, CO</h1>
+            <h1 id="city"></h1>
             <ul>
               <li>Tuesday 05:50</li>
-              <li>Clear</li>
+              <li id="description">Clear</li>
             </ul>
             <div class="row row-wrapper">
               <div class="col-6">
@@ -33,7 +34,7 @@
                     id="icon"
                   />
                   <div class="d-flex weather-temp">
-                    <strong>12</strong>
+                    <strong id="temperature">12</strong>
                     <small class="units">°C |<a href="#"> °F</a></small>
                   </div>
                 </div>
@@ -41,8 +42,8 @@
               <div class="col-6">
                 <ul>
                   <li>Precipitation: 0%</li>
-                  <li>Humidity: 75%</li>
-                  <li>Wind: 2km/h</li>
+                  <li>Humidity: <span id="humidity"></span>%</li>
+                  <li>Wind: <span id="wind"></span> km/h</li>
                 </ul>
               </div>
             </div>
