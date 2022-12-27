@@ -42,9 +42,19 @@ function displayTemp(response) {
   );
   iconElement.setAttribute("alt", response.data.condition.description);
 }
+function search(city) {
+  let apiKey = "578a34f187t077d178e8o87b0e0a9493";
+  let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
 
-let apiKey = "578a34f187t077d178e8o87b0e0a9493";
-let city = "Vail";
-let apiUrl = `https://api.shecodes.io/weather/v1/current?query=${city}&key=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayTemp);
+}
 
-axios.get(apiUrl).then(displayTemp);
+function searchSubmit(event) {
+  event.preventDefault();
+  let cityInputElement = document.querySelector("#city-input");
+  search(cityInputElement.value);
+  console.log(cityInputElement.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", searchSubmit);
