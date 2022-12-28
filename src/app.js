@@ -30,6 +30,8 @@ function displayTemp(response) {
   let dateElement = document.querySelector("#date");
   let iconElement = document.querySelector("#icon");
 
+  celsiusTemp = response.data.temperature.current;
+
   temperatureElement.innerHTML = Math.round(response.data.temperature.current);
   cityElement.innerHTML = response.data.city;
   descriptionElement.innerHTML = response.data.condition.description;
@@ -53,8 +55,33 @@ function searchSubmit(event) {
   event.preventDefault();
   let cityInputElement = document.querySelector("#city-input");
   search(cityInputElement.value);
-  console.log(cityInputElement.value);
 }
+function dislayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
+}
+
+function dislayCelsiusTemp(event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", searchSubmit);
+
+let fahrenheit = document.querySelector("#fahrenheit-link");
+fahrenheit.addEventListener("click", dislayFahrenheitTemp);
+
+let celsius = document.querySelector("#celsius-link");
+celsius.addEventListener("click", dislayCelsiusTemp);
+
+search("Vail");
