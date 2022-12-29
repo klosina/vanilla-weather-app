@@ -60,6 +60,14 @@ li:first-letter {
   align-items: center;
   justify-content: center;
 }
+
+.btn {
+  background-color: cornflowerblue;
+  border-color: cornflowerblue;
+}
+.btn:hover {
+  background-color: cadetblue;
+}
 .weather-temp .active {
   color: #8b8b8b;
 }
