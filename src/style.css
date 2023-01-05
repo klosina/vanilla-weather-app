@@ -75,3 +75,19 @@ li:first-letter {
 .weather-temp .active:hover {
   text-decoration: none;
 }
+.weather-forecast {
+  margin-top: 20px;
+  text-align: center;
+  color: #000;
+}
+.forecast-date {
+  font-size: 16px;
+  opacity: 0.5;
+}
+.forecast-temp-high {
+  font-size: 13px;
+}
+.forecast-temp-low {
+  font-size: 13px;
+  opacity: 0.5;
+}
